@@ -20,7 +20,6 @@
 #define AVIAOPOSY  12303
 
 
-
 # include <GL/glut.h>
 # include <cstdlib>
 # include <iostream>
