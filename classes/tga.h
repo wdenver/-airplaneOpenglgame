@@ -95,7 +95,7 @@ int TGAImg::Load(char* szFilename)
     
   if(!fIn.is_open())
     {
-        std::cout<<"Database file couldn't be opened :(\n"<<"Exiting......"<<std::endl;
+        std::cout<<"Database file "<<szFilename <<" couldn't be opened"<<std::endl;
         return IMG_ERR_NO_FILE;
     }
 
