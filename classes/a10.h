@@ -131,7 +131,7 @@ void A10::DesenhaSombra(GLfloat altura){
     else
     intensidade = 23/(posicao.y); 
     
-    glPushMatrix (); 
+    glPushMatrix ();
      
         
     glTranslatef(posicao.x  , altura , posicao.z);
@@ -172,7 +172,7 @@ void A10::Desenha(){
      glEnd(); */
     
     
-    float altTrem =  8*sin(rotTrem/57.3);
+    //float altTrem =  8*sin(rotTrem/57.3f);
     
    
     if (voando)

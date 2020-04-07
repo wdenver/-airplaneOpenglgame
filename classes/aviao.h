@@ -105,8 +105,9 @@ int Aviao::selecionaMissil(){
 bool Aviao::PegaMissilPosicao(Coord &p , int id){    
   
    p = MissilPosicao[id];
-   if (!voando)
+   if (!voando){
      p.y += AlturaTrem; 
+   }
       
      p  = TransRotacao(p, rotacao,1,0,0);
      p  = TransRotacao(p, -inclinacao,0,0,1);
@@ -116,9 +117,9 @@ bool Aviao::PegaMissilPosicao(Coord &p , int id){
      p.y += posicao.y;
      p.z += posicao.z;
      
-   if (voando)
+   if (voando){
      p.y += AlturaTrem;   
-            
+   }
   
   return true; 
 }
@@ -290,7 +291,7 @@ void Aviao::Atualiza(const double deltaTime){
       else
       voando = true;  
      
-     float veldir;
+     float veldir = 0;
        
   
     if(posicao.y>7000)  Forca = 0;
@@ -302,11 +303,13 @@ void Aviao::Atualiza(const double deltaTime){
        else
         Queda = 0; 
         
-       if (inclinacao<-8)
+       if (inclinacao<-8){
           Iexplodiu = true;
+       }
           
-       if ((rotacao>10)||(rotacao<-10))
+       if ((rotacao>10)||(rotacao<-10)){
          Iexplodiu = true;   
+       }
          
          Leme = -Ailerons;
          posicao.y = 0;
@@ -326,7 +329,7 @@ void Aviao::Atualiza(const double deltaTime){
         if (maxDir>1) maxDir = 1;
        
        if (inclinacao<1){
-         veldir+=((rotLeme*maxDir)*Velocidade - veldir)*deltaTime*0.1;
+         veldir+=((rotLeme*maxDir)*Velocidade - veldir)*deltaTime*0.1f;
          //if (veldir>0.64)veldir = 0.64;
         // else
         // if (veldir<-0.54)veldir = -0.64;

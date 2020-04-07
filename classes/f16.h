@@ -169,7 +169,7 @@ void F16::Desenha(){
      glEnd(); */
     
     
-    float altTrem =  8*sin(rotTrem/57.3);
+    //float altTrem =  8*sin(rotTrem/57.3f);
     
    
     if (voando)

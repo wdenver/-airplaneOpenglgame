@@ -50,7 +50,7 @@ class Objeto{
   GLfloat rotx,roty,rotz;
   Material material;       
   Objeto();       
-  void carregaArq(char* fname);
+  void carregaArq(const char* fname);
   void desenha(bool preenchido);
   bool TestaColisao(Coord segmento[2],Coord &ponto);
 };
@@ -85,7 +85,7 @@ bool Objeto::TestaColisao(Coord segmento[2],Coord &ponto){
   
   
   
-void Objeto::carregaArq(char* fname){
+void Objeto::carregaArq(const char* fname){
   string Tipo;
   char descarta;
   contVertices = contNormais  = contFaces = contTextura = 0;
@@ -93,11 +93,11 @@ void Objeto::carregaArq(char* fname){
   ifstream myfile;
   myfile.open(fname);
   if(!myfile){
-    cout << "Arquivo " << fname << " não aberto\n";
+    cout << "Arquivo " << fname << " nÃ£o aberto\n";
     exit (0);
   }
   
-  // conta os tipos para a alocação ---
+  // conta os tipos para a alocaï¿½ï¿½o ---
   while(true){
     myfile >> Tipo;
     if (Tipo == "v")       contVertices++;

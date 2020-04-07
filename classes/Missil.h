@@ -178,19 +178,21 @@ void Missil::Atualiza(const double deltaTime){
         }
         
         
-        direcao += (Idirecao-direcao)*deltaTime*0.2;
-        inclinacao += (Iinclinacao-inclinacao)*deltaTime*0.2;
+        direcao += (Idirecao-direcao)*deltaTime*0.2f;
+        inclinacao += (Iinclinacao-inclinacao)*deltaTime*0.2f;
           
         Fumaca.Gerar = true;     
         posicao.y -= queda*deltaTime;  
       //  
         movDirecao = PegaDirec();           
         
-        if (acelerador < 1)
-          acelerador  += 0.01*deltaTime;
+        if (acelerador < 1){
+          acelerador  += 0.01f*deltaTime;
+        }
           
-          if (acelerador<=0.05)
+          if (acelerador<=0.05f){
             Fumaca.densidade = acelerador*15;
+          }
         
         Velocidade+= (2000-Velocidade)*deltaTime*acelerador; 
         

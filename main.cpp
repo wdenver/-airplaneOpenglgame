@@ -111,7 +111,7 @@ char texto[120];
 
 //****************************************************************************80
 
-void DesenhaTexto(char *string ,void *font, float  x, float y) 
+void DesenhaTexto(const char *string ,void *font, float  x, float y) 
 {  
      glDisable(GL_TEXTURE_2D);
      glPushMatrix();       
@@ -214,19 +214,19 @@ void DesenhaTelaInfoHangar() {
 	glEnd();
 	   	
 	glColor4f(1.0,1.0,1.0,0.9);
-    DesenhaTexto("Comandos",GLUT_BITMAP_HELVETICA_12,-0.9,0.80);    
+    DesenhaTexto("Comandos",GLUT_BITMAP_HELVETICA_12,-0.9f,0.80f);    
     glColor4f(1,1,0,0.6);
-    DesenhaTexto("TAB",GLUT_BITMAP_HELVETICA_12,-0.8,0.45);
-    DesenhaTexto("ENTER",GLUT_BITMAP_HELVETICA_12,-0.8,0.25);
-    DesenhaTexto("ESC",GLUT_BITMAP_HELVETICA_12,-0.8,0.05);
-    DesenhaTexto("[ ]",GLUT_BITMAP_HELVETICA_12,-0.8,-0.15); 
+    DesenhaTexto("TAB",GLUT_BITMAP_HELVETICA_12,-0.8f,0.45f);
+    DesenhaTexto("ENTER",GLUT_BITMAP_HELVETICA_12,-0.8f,0.25f);
+    DesenhaTexto("ESC",GLUT_BITMAP_HELVETICA_12,-0.8f,0.05f);
+    DesenhaTexto("[ ]",GLUT_BITMAP_HELVETICA_12,-0.8f,-0.15f); 
    	glColor4f(1.0,1.0,1.0,0.6);
-    DesenhaTexto("Seleciona aviao",GLUT_BITMAP_HELVETICA_12,-0.2,0.45);
-    DesenhaTexto("Voar",GLUT_BITMAP_HELVETICA_12,-0.2,0.25);
-    DesenhaTexto("Reset",GLUT_BITMAP_HELVETICA_12,-0.2,0.05);
-    DesenhaTexto("Gira camera",GLUT_BITMAP_HELVETICA_12,-0.2,-0.15);
-    DesenhaTexto("clique no piso para adicionar",GLUT_BITMAP_HELVETICA_12,-0.9,-0.55);
-    DesenhaTexto("avioes na tela",GLUT_BITMAP_HELVETICA_12,-0.9,-0.70);   
+    DesenhaTexto("Seleciona aviao",GLUT_BITMAP_HELVETICA_12,-0.2f,0.45f);
+    DesenhaTexto("Voar",GLUT_BITMAP_HELVETICA_12,-0.2f,0.25f);
+    DesenhaTexto("Reset",GLUT_BITMAP_HELVETICA_12,-0.2f,0.05f);
+    DesenhaTexto("Gira camera",GLUT_BITMAP_HELVETICA_12,-0.2f,-0.15f);
+    DesenhaTexto("clique no piso para adicionar",GLUT_BITMAP_HELVETICA_12,-0.9f,-0.55f);
+    DesenhaTexto("avioes na tela",GLUT_BITMAP_HELVETICA_12,-0.9f,-0.70f);   
 	glDisable(GL_BLEND);	
 	glDepthFunc(GL_LEQUAL);	
 	glEnable(GL_TEXTURE_2D);  
@@ -261,26 +261,26 @@ void DesenhaInfo(){
 	
     	
 	glColor4f(1,1,1,0.9);
-    DesenhaTexto("Info",GLUT_BITMAP_HELVETICA_12,-0.9,0.75);
+    DesenhaTexto("Info",GLUT_BITMAP_HELVETICA_12,-0.9f,0.75f);
     glColor4f(1,1,1,0.6);
-    DesenhaTexto("Velocidade",GLUT_BITMAP_HELVETICA_12,-0.8,0.45);
-    DesenhaTexto("Altitude",GLUT_BITMAP_HELVETICA_12,-0.8,0.15);
-    DesenhaTexto("Motor",GLUT_BITMAP_HELVETICA_12,-0.8,-0.15);
-    DesenhaTexto("Misseis",GLUT_BITMAP_HELVETICA_12,-0.8,-0.45);
-    DesenhaTexto("Rodas",GLUT_BITMAP_HELVETICA_12,-0.8,-0.75);
+    DesenhaTexto("Velocidade",GLUT_BITMAP_HELVETICA_12,-0.8f,0.45f);
+    DesenhaTexto("Altitude",GLUT_BITMAP_HELVETICA_12,-0.8f,0.15f);
+    DesenhaTexto("Motor",GLUT_BITMAP_HELVETICA_12,-0.8f,-0.15f);
+    DesenhaTexto("Misseis",GLUT_BITMAP_HELVETICA_12,-0.8f,-0.45f);
+    DesenhaTexto("Rodas",GLUT_BITMAP_HELVETICA_12,-0.8f,-0.75f);
    	glColor4f(1,1,0,0.6);
    	 sprintf(texto, "%d Km/h" ,(int)trunc(AviaoCorrente->Velocidade));
-   	 DesenhaTexto(texto,GLUT_BITMAP_HELVETICA_12,0,0.45);
+   	 DesenhaTexto(texto,GLUT_BITMAP_HELVETICA_12,0,0.45f);
    	 sprintf(texto, "%d m" ,(int)trunc(AviaoCorrente->getPosicao().y/5));
-   	 DesenhaTexto(texto,GLUT_BITMAP_HELVETICA_12,0,0.15); 
+   	 DesenhaTexto(texto,GLUT_BITMAP_HELVETICA_12,0,0.15f); 
    	 sprintf(texto, "%d %%" ,(int)trunc(AviaoCorrente->Forca));
-   	 DesenhaTexto(texto,GLUT_BITMAP_HELVETICA_12,0,-0.15);
+   	 DesenhaTexto(texto,GLUT_BITMAP_HELVETICA_12,0,-0.15f);
    	 sprintf(texto, "%d unit" ,(int)trunc(AviaoCorrente->missilAtivo));
-   	 DesenhaTexto(texto,GLUT_BITMAP_HELVETICA_12,0,-0.45);
+   	 DesenhaTexto(texto,GLUT_BITMAP_HELVETICA_12,0,-0.45f);
    	 if(AviaoCorrente->tremPouso)
-     DesenhaTexto("Baixo",GLUT_BITMAP_HELVETICA_12,0,-0.75);
+     DesenhaTexto("Baixo",GLUT_BITMAP_HELVETICA_12,0,-0.75f);
      else
-     DesenhaTexto("Alto",GLUT_BITMAP_HELVETICA_12,0,-0.75);
+     DesenhaTexto("Alto",GLUT_BITMAP_HELVETICA_12,0,-0.75f);
 	glDisable(GL_BLEND);	
 	glDepthFunc(GL_LEQUAL);	
 	glEnable(GL_TEXTURE_2D);    
@@ -348,7 +348,7 @@ void DesenhaRadar() {
         if (!misseis[k].ativo) continue;
          if (!misseis[k].liberado) continue;    
         glPushMatrix();
-       	glTranslatef(-misseis[k].getPosicao().z/30000.0 ,-misseis[k].getPosicao().x/30000.0,0);     	
+       	glTranslatef(-misseis[k].getPosicao().z/30000.0f ,-misseis[k].getPosicao().x/30000.0f,0);     	
        	if (misseis[k].explodiu){
            	glColor4f(0.8,0.0,0.0,0.8);
         	glBegin(GL_LINES);
@@ -383,7 +383,7 @@ void DesenhaRadar() {
 	 glEnd();
     	
 	 glColor4f(0.7,1.0,0.7,0.8);
-	 DesenhaTexto("Radar",GLUT_BITMAP_HELVETICA_12,-0.9, 0.85);
+	 DesenhaTexto("Radar",GLUT_BITMAP_HELVETICA_12,-0.9f, 0.85f);
 
  	 glDisable(GL_BLEND);	
 	 glDepthFunc(GL_LEQUAL);	
@@ -398,7 +398,7 @@ int main ( int argc, char *argv[] )
   glutInit ( &argc, argv );
   glutInitDisplayMode ( GLUT_DOUBLE | GLUT_RGB | GLUT_DEPTH);
   glutInitWindowSize ( 1024, 700 );
-  glutCreateWindow ( "Trabalho de Computação Gráfica - Waldir Denver" );
+  glutCreateWindow ( "Trabalho de Computaï¿½ï¿½o Grï¿½fica - Waldir Denver" );
   glutKeyboardFunc( keyboard_input);
   glutKeyboardUpFunc(keyboard_Up_input);
   glutMouseFunc(GerenciaMouse);     
@@ -412,7 +412,7 @@ int main ( int argc, char *argv[] )
 
 
 bool TestaColisaoCenario(Coord segmento[2], Coord &ponto){
- bool saida = false;
+// bool saida = false;
  
  if (aeroporto.TestaColisao(segmento,ponto))
    return true;
@@ -426,7 +426,7 @@ bool TestaColisaoCenario(Coord segmento[2], Coord &ponto){
 
 
 void AtualizaVoo(){ 
-   bool auxb;       
+   //bool auxb;       
    Raltura = relevo.PegaAltura(AviaoCorrente->getPosicao().x,AviaoCorrente->getPosicao().z);       
                      
     Coord p[2];
@@ -947,19 +947,19 @@ void idle ( void )
   AviaoCorrente->setProfundor(0); 
   
   
-  if (teclas['b']) 
+  if (teclas['b']){
     AviaoCorrente->freio = true;
-  else 
+  }else{ 
     AviaoCorrente->freio = false;
-   
+  }
+
     f16.Atualiza(DeltaTime);
     a10.Atualiza(DeltaTime);  
   
   
-   if (tela == 0) 
+   if (tela == 0){ 
      AviaoCorrente->setAcelerador(0); 
-   else     
-   if (tela == 1){ 
+   }else if (tela == 1){ 
      AtualizaVoo();
    }
   
@@ -1045,8 +1045,8 @@ void myReshape ( int w, int h )
 void GerenciaMouse(int button, int state, int x, int y)
 {        
  
- GLfloat CPosx;
- GLfloat CPosY;
+ //GLfloat CPosx;
+ //GLfloat CPosY;
  Coord auxVet;
 
  angX = ((x - TelaLargura/2.0)/TelaLargura)*70*(float)TelaLargura/TelaAltura;

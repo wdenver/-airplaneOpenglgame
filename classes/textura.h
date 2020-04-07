@@ -12,7 +12,7 @@
 using namespace std;
 
 
-GLint LoadTextura(char *TexName)
+GLint LoadTextura(const char *TexName)
   {
    TGAImg Img;        
    GLuint Texture;

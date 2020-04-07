@@ -63,8 +63,8 @@ void  ControlaParticulas::Reset(){
 }  
 
 ControlaParticulas::ControlaParticulas(){
- Particula *ListaParticula;  
- Particula *UltimaParticula;  
+ //Particula *ListaParticula;  
+ //Particula *UltimaParticula;  
  Reset();                
 }
 
@@ -146,7 +146,7 @@ void  ControlaParticulas::Update(const float aDeltaTime){
 
 
 //******************************************************************************
-// Remove Uma partícula da lista de partículas e destroy esta partícula
+// Remove Uma partï¿½cula da lista de partï¿½culas e destroy esta partï¿½cula
 //******************************************************************************
 void ControlaParticulas::DestroyParticula(Particula  * p){ 
  Particula  * auxproximo; 
@@ -176,7 +176,7 @@ void ControlaParticulas::DestroyParticula(Particula  * p){
 }
 
 //******************************************************************************
-// Insere uma Partícula na lista de Partículas
+// Insere uma Partï¿½cula na lista de Partï¿½culas
 //******************************************************************************
 void ControlaParticulas::InserParticula(Particula  * p){ 
 if (ListaParticula == NULL){
@@ -191,7 +191,7 @@ if (ListaParticula == NULL){
 
 
 //******************************************************************************
-// Cria uma Partícula do tipo fogo e insere esta Partícula na lista de Partículas
+// Cria uma Partï¿½cula do tipo fogo e insere esta Partï¿½cula na lista de Partï¿½culas
 //******************************************************************************
 void ControlaParticulas::CriarParticulaFogo(float x, float y , float z){
  Particula * aux;
@@ -243,7 +243,7 @@ void ControlaParticulas::CriarParticulaFogo(float x, float y , float z){
 
 
 //******************************************************************************
-// Cria uma Partícula do tipo explosao e insere esta Partícula na lista de Partículas
+// Cria uma Partï¿½cula do tipo explosao e insere esta Partï¿½cula na lista de Partï¿½culas
 //******************************************************************************
 void ControlaParticulas::CriarParticulaExplode(float x, float y , float z){
  Particula * aux;
@@ -296,7 +296,7 @@ void ControlaParticulas::CriarParticulaExplode(float x, float y , float z){
 
 
 //******************************************************************************
-// Desenha um quadrado que representa uma partícula
+// Desenha um quadrado que representa uma partï¿½cula
 //******************************************************************************
 void ControlaParticulas::DesenhaParticulas(){  
  Particula * aux =  UltimaParticula;   

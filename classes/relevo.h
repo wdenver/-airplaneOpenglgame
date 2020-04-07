@@ -34,8 +34,8 @@ class Relevo{
   public:
     Relevo();
     float largura,comprimento;
-    GLint carregaArq(char* TexName);
-    GLint carregaDetalhe(char* TexName);
+    GLint carregaArq(const char* TexName);
+    GLint carregaDetalhe(const char* TexName);
     void DesenhaElev(int dist, bool mapNormal, GLfloat Alfa);
     void desenha(bool _preenchido, double x , double z , double alt);  
     void PegaQuadro(Coord v[],Coord P);
@@ -126,9 +126,9 @@ void Relevo::PegaQuadro(Coord v[],Coord P){
 }
 
 
-GLint Relevo::carregaDetalhe(char* TexName){
+GLint Relevo::carregaDetalhe(const char* TexName){
  Texture2 = LoadTextura(TexName);
-           
+ return Texture2;          
 }
 
 
@@ -167,11 +167,11 @@ void Relevo::DesenhaElev(int dist, bool mapNormal, GLfloat Alfa){
   
     
     
-    float esc = 0;     
+    //float esc = 0;     
     
     int menor_x , maior_x;  
     int menor_y , maior_y;  
-    int multx, multy;   
+     
     
     cx = (cx/passo);
     cx = cx*passo;
@@ -187,9 +187,9 @@ void Relevo::DesenhaElev(int dist, bool mapNormal, GLfloat Alfa){
 	//glBegin(GL_QUADS);
     glBegin(GL_TRIANGLE_FAN);
            
-
-            multx = 10;   
-            multy = 10;  
+            //int multx, multy;  
+            //multx = 10;   
+            //multy = 10;  
           /*  
             
             if (abs(X) < front){
@@ -330,7 +330,7 @@ GLfloat Relevo::PegaAltura(double x , double z){
 
 
 
-GLint Relevo::carregaArq(char* TexName){
+GLint Relevo::carregaArq(const char* TexName){
      
  
    if(Img.Load(TexName)!=IMG_OK)

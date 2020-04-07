@@ -17,7 +17,7 @@ class TGAImg
   public:
    TGAImg();
    ~TGAImg();
-   int Load(char* szFilename);
+   int Load(const char* szFilename);
    int GetBPP();
    int GetWidth();
    int GetHeight();
@@ -70,7 +70,7 @@ TGAImg::~TGAImg()
  }
 
 
-int TGAImg::Load(char* szFilename)
+int TGAImg::Load(const char* szFilename)
  {
   using namespace std;
   ifstream fIn;
