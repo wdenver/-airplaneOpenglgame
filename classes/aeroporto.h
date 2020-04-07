@@ -11,7 +11,9 @@
 
 
 
-
+/**
+* Classe que desenha o aeroporto
+*/
 class Aeroporto{
 private:
   Objeto ObjPista;
@@ -32,10 +34,18 @@ public:
 
 };
 
+
+/**
+ * Construtor
+ */
 Aeroporto::Aeroporto(){
 } 
 
 
+
+/**
+ * testa a colisão de um segmento de reta com este aeroporto
+ */
 bool Aeroporto::TestaColisao(Coord segmento[2],Coord &ponto){
    
    Coord auxSegmento[2];
@@ -67,6 +77,10 @@ bool Aeroporto::TestaColisao(Coord segmento[2],Coord &ponto){
      
 }   
 
+
+/**
+ * carrega os vetores e as imagens que compoe o aeroporto
+ */
 void Aeroporto::carregar(){
   ObjPista.carregaArq("./dados/cenario/aeroporto/pista.obj");
   ObjGrama.carregaArq("./dados/cenario/aeroporto/grama.obj");
@@ -77,8 +91,13 @@ void Aeroporto::carregar(){
   TexObj1= LoadTextura("./dados/cenario/aeroporto/obj1.tga"); 
   TexObjT= LoadTextura("./dados/cenario/aeroporto/objT.tga"); 
 }
+
+
+
 void Aeroporto::Atualiza(double deltaTime){
 }
+
+
 void Aeroporto::Desenha(bool preenchido){ 
      
      
