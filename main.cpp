@@ -706,7 +706,7 @@ void DesenhaVoando()
         				
     //  glBegin(GL_LINES);
     //   glVertex3f(AviaoCorrente->getPosicao().x,alt ,AviaoCorrente->getPosicao().z);
-    //   glVertex3f(AviaoCorrente->getPosicao().x,AviaoCorrente->getPosicao().y,AviaoCorrente->getPosicao()Z.z);   
+    //   glVertex3f(AviaoCorrente->getPosicao().x,AviaoCorrente->getPosicao().y,AviaoCorrente->getPosicao().z);   
     //   glVertex3f(AviaoCorrente->getPosicao().x,alt ,AviaoCorrente->getPosicao().z);
     //   glVertex3f(v[0].x,v[0].y,v[0].z);    
     //   glVertex3f(AviaoCorrente->getPosicao().x,alt ,AviaoCorrente->getPosicao().z);
