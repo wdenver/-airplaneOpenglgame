@@ -8,3 +8,7 @@ como um trabalho de computação gráfica para o curso de Ciência da computaç�
     sudo apt-get install freeglut3-dev
 
 
+
+![tumb1](./img/tumb1.jpg)
+![tumb2](./img/tumb2.jpg)
+![tumb3](./img/tumb3.jpg)
